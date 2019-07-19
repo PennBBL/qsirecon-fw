@@ -1,0 +1,56 @@
+{
+	"name": "qsirecon-fw",
+	"label": "QSIRECON: workflows for reconstructing QSIPrep output",
+	"description": "qsirecon builds workflows for reconstructing preprocessed dMRI data.",
+	"version": "0.0.1_0.4.4",
+	"inputs": {
+		"api_key": {
+			"base": "api-key"
+		},
+		"freesurfer_license": {
+			"base": "file",
+			"description": "FreeSurfer license file, provided during registration with FreeSurfer. This file will by copied to the $FSHOME directory and used during execution of the Gear.",
+			"optional": false
+		},
+		"recon_spec": {
+			"base": "file",
+			"description": "JSON file describing the steps that will occur after preprocessing.",
+			"optional": true
+		}
+	},
+	"config": {
+		"intermediate_files": {
+			"default": "",
+			"description": "Space separated list of FILES to retain from the intermediate work directory.",
+			"type": "string"
+		},
+		"intermediate_folders": {
+			"default": "",
+			"description": "Space separated list of FOLDERS to retain from the intermediate work directory.",
+			"type": "string"
+		},
+		"save_intermediate_work": {
+			"default": false,
+			"description": "Zip and save working directory with intermediate files. [default=false]",
+			"type": "boolean"
+		},
+		"save_outputs": {
+			"default": true,
+			"description": "Zip and save output directory contents on an algorithm failure. [default=false]",
+			"type": "boolean"
+		}
+	},
+	"author": "Matthew Cieslak",
+	"maintainer": "Matthew Cieslak",
+	"cite": "github.com/pennbbl/qsiprep",
+	"license": "BSD 3-Clause",
+	"source": "https://github.com/pennbbl/qsirecon-fw",
+	"url": "https://qsiprep.readthedocs.io/",
+	"custom": {
+		"gear-builder": {
+			"category": "analysis",
+			"image": "pennbbl/qsirecon-fw:0.0.1_0.4.4"
+		},
+    "flywheel":{"suite": "PennBBL"}
+	}
+}
