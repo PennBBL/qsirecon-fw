@@ -2,7 +2,7 @@
 	"name": "qsirecon-fw",
 	"label": "QSIRECON: workflows for reconstructing QSIPrep output",
 	"description": "qsirecon builds workflows for reconstructing preprocessed dMRI data.",
-	"version": "0.0.1_0.4.4",
+	"version": "0.0.2_0.4.6",
 	"inputs": {
 		"api_key": {
 			"base": "api-key"
@@ -15,7 +15,12 @@
 		"recon_spec": {
 			"base": "file",
 			"description": "JSON file describing the steps that will occur after preprocessing.",
-			"optional": true
+			"optional": false
+		},
+		"qsiprep_output": {
+			"base": "file",
+			"description": "Zip file containing qsiprep output.",
+			"optional": false
 		}
 	},
 	"config": {
@@ -43,13 +48,13 @@
 	"author": "Matthew Cieslak",
 	"maintainer": "Matthew Cieslak",
 	"cite": "github.com/pennbbl/qsiprep",
-	"license": "BSD 3-Clause",
+	"license": "BSD-3-Clause",
 	"source": "https://github.com/pennbbl/qsirecon-fw",
 	"url": "https://qsiprep.readthedocs.io/",
 	"custom": {
 		"gear-builder": {
 			"category": "analysis",
-			"image": "pennbbl/qsirecon-fw:0.0.1_0.4.4"
+			"image": "pennbbl/qsirecon-fw:0.0.2_0.4.6"
 		},
     "flywheel":{"suite": "PennBBL"}
 	}

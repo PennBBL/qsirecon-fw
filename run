@@ -94,11 +94,17 @@ else
     exit 1
 fi
 
+# Unpack the qsiprep outputs
+cd ${INPUT_DIR}/qsiprep_output
+unzip *.zip
+rm *.zip
+RECON_INPUT=`pwd`/*/qsiprep
+
 # RUN QSIPREP: recon mode
 
 time /usr/local/miniconda/bin/qsiprep \
-      --recon-input ${INPUT_DIR}/qsiprep \
-      --bids_dir ${INPUT_DIR}/qsiprep \
+      --recon-input ${RECON_INPUT} \
+      --bids_dir ${RECON_INPUT} \
       --analysis-level participant \
       --output-dir ${QSIPREP_OUTPUT_DIR} \
       --output-resolution 2 \
