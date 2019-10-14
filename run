@@ -47,12 +47,15 @@ config_save_outputs="$(parse_config 'save_outputs')"
 config_save_intermediate_work="$(parse_config 'save_intermediate_work')"
 config_intermediate_files="$(parse_config 'intermediate_files')"
 config_intermediate_folders="$(parse_config 'intermediate_folders')"
+config_recon_builtin="$(parse_config 'recon_builtin')"
 
 
 if [[ -n "$RECON_SPEC_FILE" ]]; then
   recon_spec_FLAG='--recon_spec '$RECON_SPEC_FILE
-else
-  recon_spec_FLAG=''
+elif [[ -n "$config_recon_builtin" ]]; then
+  recon_spec_FLAG='--recon_spec '$config_recon_builtin
+else;
+  recon_spec_FLAG=' '
 fi
 
 

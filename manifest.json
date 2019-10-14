@@ -2,7 +2,7 @@
 	"name": "qsirecon-fw",
 	"label": "QSIRECON: workflows for reconstructing QSIPrep output",
 	"description": "qsirecon builds workflows for reconstructing preprocessed dMRI data.",
-	"version": "0.0.2_0.4.6",
+	"version": "0.0.2_0.6.1",
 	"inputs": {
 		"api_key": {
 			"base": "api-key"
@@ -34,6 +34,22 @@
 			"description": "Space separated list of FOLDERS to retain from the intermediate work directory.",
 			"type": "string"
 		},
+		"recon_builtin": {
+			"default": "",
+			"description": "Use a pre-configured reconstruction workflow",
+			"enum": [
+				"",
+				"dsi_studio_gqi",
+				"mrtrix_msmt_csd",
+				"mrtrix_dhollander",
+				"mrtrix_dhollander_no5tt",
+				"mrtrix_tckglobal",
+				"dipy_3dshore",
+				"dipy_mapmri",
+				"csdsi_3dshore"
+			],
+			"type": "string"
+		},
 		"save_intermediate_work": {
 			"default": false,
 			"description": "Zip and save working directory with intermediate files. [default=false]",
@@ -54,7 +70,7 @@
 	"custom": {
 		"gear-builder": {
 			"category": "analysis",
-			"image": "pennbbl/qsirecon-fw:0.0.2_0.4.6"
+			"image": "pennbbl/qsirecon-fw:0.0.2_0.6.1"
 		},
     "flywheel":{"suite": "PennBBL"}
 	}
