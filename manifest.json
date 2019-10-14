@@ -2,7 +2,7 @@
 	"name": "qsirecon-fw",
 	"label": "QSIRECON: workflows for reconstructing QSIPrep output",
 	"description": "qsirecon builds workflows for reconstructing preprocessed dMRI data.",
-	"version": "0.0.2_0.6.1",
+	"version": "0.0.3_0.6.1",
 	"inputs": {
 		"api_key": {
 			"base": "api-key"
@@ -70,7 +70,7 @@
 	"custom": {
 		"gear-builder": {
 			"category": "analysis",
-			"image": "pennbbl/qsirecon-fw:0.0.2_0.6.1"
+			"image": "pennbbl/qsirecon-fw:0.0.3_0.6.1"
 		},
     "flywheel":{"suite": "PennBBL"}
 	}
