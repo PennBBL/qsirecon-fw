@@ -106,11 +106,10 @@ RECON_INPUT=`pwd`/*/qsiprep
 # RUN QSIPREP: recon mode
 
 time /usr/local/miniconda/bin/qsiprep \
+      ${RECON_INPUT} \
+      ${QSIPREP_OUTPUT_DIR} \
+      participant \
       --recon-input ${RECON_INPUT} \
-      --bids_dir ${RECON_INPUT} \
-      --analysis-level participant \
-      --output-dir ${QSIPREP_OUTPUT_DIR} \
-      --output-resolution 2 \
       --recon-only \
       -w ${WORKING_DIR} \
       -v -v \
@@ -128,7 +127,6 @@ if [[ $QSIPREP_EXITSTATUS == 0 ]] ; then
   # Convert index to standalone zip archive
   html_file=$(find "$QSIPREP_OUTPUT_DIR"/qsiprep/ -name "sub-*.html")
   SUB_ID=$(basename "$html_file" .html)
-
 
   # Look for files/folders to preserve from the working DIRECTORY
   work_file_zip="$GEAR_OUTPUT_DIR"/qsiprep_work_selected_"$SUB_ID"_"$ANALYSIS_ID".zip

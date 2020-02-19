@@ -2,7 +2,14 @@
 	"name": "qsirecon-fw",
 	"label": "QSIRECON: workflows for reconstructing QSIPrep output",
 	"description": "qsirecon builds workflows for reconstructing preprocessed dMRI data.",
-	"version": "0.0.3_0.6.1",
+	"version": "0.0.3_0.8.0RC3",
+	"custom": {
+		"gear-builder": {
+			"category": "analysis",
+			"image": "pennbbl/qsirecon-fw:0.0.3_0.8.0RC3"
+		},
+    "flywheel":{"suite": "PennBBL"}
+    },
 	"inputs": {
 		"api_key": {
 			"base": "api-key"
@@ -38,12 +45,12 @@
 			"default": "",
 			"description": "Use a pre-configured reconstruction workflow",
 			"enum": [
-				"",
+                "",
 				"dsi_studio_gqi",
-				"mrtrix_msmt_csd",
-				"mrtrix_dhollander",
-				"mrtrix_dhollander_no5tt",
-				"mrtrix_tckglobal",
+				"mrtrix_multishell_msmt",
+				"mrtrix_multishell_msmt_noACT",
+				"mrtrix_singleshell_ss3t",
+				"mrtrix_singleshell_ss3t_noACT",
 				"dipy_3dshore",
 				"dipy_mapmri",
 				"csdsi_3dshore"
@@ -66,12 +73,5 @@
 	"cite": "github.com/pennbbl/qsiprep",
 	"license": "BSD-3-Clause",
 	"source": "https://github.com/pennbbl/qsirecon-fw",
-	"url": "https://qsiprep.readthedocs.io/",
-	"custom": {
-		"gear-builder": {
-			"category": "analysis",
-			"image": "pennbbl/qsirecon-fw:0.0.3_0.6.1"
-		},
-    "flywheel":{"suite": "PennBBL"}
-	}
+	"url": "https://qsiprep.readthedocs.io/"
 }
