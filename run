@@ -109,7 +109,12 @@ time /usr/local/miniconda/bin/qsiprep \
 
 QSIPREP_EXITSTATUS=$?
 
+if [[ -d ${QSIPREP_OUTPUT_DIR}/bids_dataset ]]
+then
+    rm -rf ${QSIPREP_OUTPUT_DIR}/bids_dataset
+fi
 
+rm -rf ${RECON_INPUT}
 ################################################################################
 # CLEANUP OUTPUTS
 
