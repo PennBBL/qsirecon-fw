@@ -1,7 +1,6 @@
 
 flywheel/
 local_test.sh
-fwutil_job_run_local.py
 local_docker_test.sh
 
 # Byte-compiled / optimized / DLL files
