@@ -32,8 +32,6 @@ if outputs:
 
         # logging stuff
         logger.info("=======: fw-heudiconv starting up :=======")
-        logger.info("Copying multi-session fMRIprep run to the project level...")
-
         inputs_list = []
         try:
             for key, val in inputs.items():
