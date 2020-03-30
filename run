@@ -48,6 +48,8 @@ config_save_intermediate_work="$(parse_config 'save_intermediate_work')"
 config_intermediate_files="$(parse_config 'intermediate_files')"
 config_intermediate_folders="$(parse_config 'intermediate_folders')"
 config_recon_builtin="$(parse_config 'recon_builtin')"
+config_nprocs="$(parse_config 'sge-cpu')"
+config_sloppy="$(parse_config 'sloppy')"
 
 
 if [[ -n "$RECON_SPEC_FILE" ]]; then
@@ -58,6 +60,11 @@ else
   recon_spec_FLAG=' '
 fi
 
+if [[${config_sloppy} == 'true']]; then
+  sloppy_FLAG='--sloppy'
+else
+  sloppy_FLAG=''
+fi
 
 ########################
 # Freesurfer License
@@ -103,7 +110,9 @@ time /usr/local/miniconda/bin/qsiprep \
       --recon-input ${RECON_INPUT} \
       --recon-only \
       -w ${WORKING_DIR} \
+      --nthreads ${config_nprocs} \
       -v -v \
+      ${sloppy_FLAG} \
       ${recon_spec_FLAG}
 
 
@@ -194,7 +203,7 @@ fi
 
 # Clean up
 rm -rf "$WORKING_DIR"
-#rm -rf "$QSIPREP_OUTPUT_DIR"
+rm -rf "$QSIPREP_OUTPUT_DIR"
 
 echo -e "Wrote: `ls -lh $GEAR_OUTPUT_DIR`"
 

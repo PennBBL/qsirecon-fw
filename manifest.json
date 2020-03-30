@@ -2,11 +2,11 @@
 	"name": "qsirecon-fw",
 	"label": "QSIRECON: workflows for reconstructing QSIPrep output",
 	"description": "qsirecon builds workflows for reconstructing preprocessed dMRI data.",
-	"version": "0.0.6_0.8.0",
+	"version": "0.0.7_0.8.0",
 	"custom": {
 		"gear-builder": {
 			"category": "analysis",
-			"image": "pennbbl/qsirecon-fw:0.0.6_0.8.0"
+			"image": "pennbbl/qsirecon-fw:0.0.7_0.8.0"
 		},
     "flywheel":{"suite": "PennBBL"}
     },
@@ -57,6 +57,11 @@
 			],
 			"type": "string"
 		},
+		"sloppy": {
+					"default": false,
+					"description": "Use low-quality tools for speed - TESTING ONLY",
+					"type": "boolean"
+				},
 		"save_intermediate_work": {
 			"default": false,
 			"description": "Zip and save working directory with intermediate files. [default=false]",
@@ -66,7 +71,37 @@
 			"default": true,
 			"description": "Zip and save output directory contents on an algorithm failure. [default=false]",
 			"type": "boolean"
-		}
+		},
+    "sge-cpu": {
+      "type": "string",
+      "default": "8",
+      "description": "[SGE] How many cores to request. This is used for the underlying '-pe threaded' option."
+    },
+    "sge-ram": {
+      "type": "string",
+      "default": "64G",
+      "description": "[SGE] How much RAM to request. This is used for the underlying '-l h_vmem' option."
+    },
+    "sge-short": {
+      "type": "boolean",
+      "default": false,
+      "description": "[SGE] Tell the cluster this is a short job. This caps the job to 90 minutes wall-clock and 15 minutes of CPU."
+    },
+    "singularity-debug": {
+      "type": "boolean",
+      "default": false,
+      "description": "[Singularity] Enable verbose logging."
+    },
+    "singularity-writable": {
+      "type": "boolean",
+      "default": false,
+      "description": "[Singularity] Mount the container as writable."
+    },
+		"timeout":{
+      "description": "Maximum number of days that fmriprep can run",
+      "type": "number",
+      "default": 2
+    }
 	},
 	"author": "Matthew Cieslak",
 	"maintainer": "Matthew Cieslak",
