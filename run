@@ -131,7 +131,7 @@ if [[ $QSIPREP_EXITSTATUS == 0 ]] ; then
 
   # Convert index to standalone zip archive
   html_file=$(find "$QSIPREP_OUTPUT_DIR"/qsirecon/ -name "sub-*.html")
-  SUB_ID=$(basename "$html_file" .html
+  SUB_ID=$(basename "$html_file" .html)
   SES_PATH=$(find "$QSIPREP_OUTPUT_DIR"/qsirecon/ -type d -iname "ses*")
   SES_ID=$(basename "$SES_PATH")
 
