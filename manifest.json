@@ -1,14 +1,14 @@
 {
-	"name": "qsirecon-fw",
+	"name": "qsirecon-fw-hpc",
 	"label": "QSIRECON: workflows for reconstructing QSIPrep output",
 	"description": "qsirecon builds workflows for reconstructing preprocessed dMRI data.",
 	"version": "0.0.11_0.8.0",
 	"custom": {
 		"gear-builder": {
 			"category": "analysis",
-			"image": "pennbbl/qsirecon-fw:0.0.11_0.8.0"
+			"image": "pennbbl/qsirecon-fw-hpc:0.0.11_0.8.0"
 		},
-    "flywheel":{"suite": "PennBBL"}
+    "flywheel":{"suite": "Runs on HPC [Experimental]"}
     },
 	"inputs": {
 		"api_key": {
@@ -107,6 +107,6 @@
 	"maintainer": "Matthew Cieslak",
 	"cite": "github.com/pennbbl/qsiprep",
 	"license": "BSD-3-Clause",
-	"source": "https://github.com/pennbbl/qsirecon-fw",
+	"source": "https://github.com/pennbbl/qsirecon-fw-hpc",
 	"url": "https://qsiprep.readthedocs.io/"
 }
