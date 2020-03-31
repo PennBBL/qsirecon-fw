@@ -48,7 +48,7 @@ config_save_intermediate_work="$(parse_config 'save_intermediate_work')"
 config_intermediate_files="$(parse_config 'intermediate_files')"
 config_intermediate_folders="$(parse_config 'intermediate_folders')"
 config_recon_builtin="$(parse_config 'recon_builtin')"
-config_nprocs="$(parse_config 'sge-cpu')"
+config_nprocs="$(parse_config '"sge-cpu"')"
 config_sloppy="$(parse_config 'sloppy')"
 
 
