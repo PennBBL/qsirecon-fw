@@ -60,7 +60,7 @@ else
   recon_spec_FLAG=' '
 fi
 
-if [[${config_sloppy} == 'true']]; then
+if [[ ${config_sloppy} == 'true' ]]; then
   sloppy_FLAG='--sloppy'
 else
   sloppy_FLAG=''
